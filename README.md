@@ -1,4 +1,4 @@
-[![Yourprojectname](.github/images/logo.png)](https://yourprojectname.com)
+[![Yourprojectname](https://raw.githubusercontent.com/ptkdev-boilerplate/ptkdev-express-boilerplate/master/.github/images/logo.png)](https://yourprojectname.com)
 
 # 🎩 Yourprojectname
 
@@ -38,8 +38,6 @@ See scripts on `package.json` for more feature and prod mode.
 
 ## 📚 Documentation
 1. Run `npm run docs`
-
-If you want are available online [here](http://docs.socialmanager.tools/README.md).
 
 ## 👑 Sponsors (max 10 available)
 Support this project by becoming a sponsor. 🙏 Become a sponsor on [patreon](http://patreon.ptkdev.io) or [opencollective](https://opencollective.com/social-manager-tools#sponsor). Your logo will show up here with a link to your website.
