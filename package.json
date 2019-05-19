@@ -1,0 +1,112 @@
+{
+	"name": "yourprojectname",
+	"description": "Yourprojectname",
+	"version": "1.0.0",
+	"main": "modules/core/lib.js",
+	"author": "Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)",
+	"license": "MIT",
+	"homepage": "https://yourprojectname.com",
+	"docs": "https://docs.yourprojectname.com",
+	"donate": {
+		"patreon": "http://patreon.ptkdev.io",
+		"paypal": "http://paypal.ptkdev.io",
+		"ko-fi": "http://coffee.ptkdev.io"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ptkdev/yourprojectname.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ptkdev/yourprojectname/issues"
+	},
+	"scripts": {
+		"start": "gulp build-static && node app.js --config=\"./configs/config.js\"",
+		"prod": "gulp build-static && npm run start-pm2",
+		"dev": "gulp build-static && gulp server --config=\"./configs/config.js\"",
+		"stop": "killall node",
+		"start-pm2": "pm2 start .pm2-process.json",
+		"stop-pm2": "pm2 stop .pm2-process.json",
+		"clean": "rm -rf node_modules package-lock.json && npm install",
+		"update": "rm -f package-lock.json && npm update",
+		"vendor": "cpy node_modules/cash-dom/dist/cash.min.js www/js/vendor/cash-dom/ && cpy node_modules/bulma/css/bulma.min.css www/css/vendor/bulma/",
+		"lint": "eslint ./ --cache --ignore-pattern .gitignore",
+		"lint-fix": "eslint ./ --cache --ignore-pattern .gitignore --fix --rule 'snakecasejs/snakecasejs: off'",
+		"git-set-upstream": "git remote add upstream git@github.com:ptkdev/yourprojectname.git && git fetch upstream",
+		"git-pull-upstream": "git pull upstream master && git pull upstream beta && git pull upstream nightly",
+		"git-switch-master": "git checkout master && git pull --recursive",
+		"git-switch-beta": "git checkout beta && git pull --recursive",
+		"git-switch-nightly": "git checkout nightly && git pull --recursive",
+		"git-pull": "git pull --recursive",
+		"git-ignore-reset": "git rm -r --cached . && git add . && git commit -m \"[Fix] Removing all files in .gitignore\"",
+		"git-postinstall": "npm run docs-init && npm run git-set-upstream && git-switch-nightly",
+		"npm-publish-master": "git checkout master && npm publish",
+		"npm-publish-beta": "git checkout beta && npm publish --tag beta",
+		"npm-publish-nightly": "git checkout nightly && npm publish --tag nightly",
+		"webp": "cwebp -q 100 ./www/img/logo.png -o ./www/img/logo.webp",
+		"contributors-generate": "all-contributors generate",
+		"docs": "markserv ./docs/README.md",
+		"test": "jest",
+		"postinstall": "npm run vendor",
+		"devpostinstall": "npm run contributors-generate"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint && npm run contributors-generate"
+		}
+	},
+	"keywords": [
+		"social",
+		"network"
+	],
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"dependencies": {
+		"bulma": "latest",
+		"cash-dom": "latest",
+		"chalk": "latest",
+		"cookie-parser": "latest",
+		"express": "latest",
+		"express-session": "latest",
+		"jsonwebtoken": "latest",
+		"lowdb": "latest",
+		"mysql": "latest",
+		"nunjucks": "latest",
+		"passport": "latest",
+		"passport-facebook": "latest",
+		"passport-github": "latest",
+		"passport-google-oauth20": "latest",
+		"passport-instagram": "latest",
+		"passport-twitter": "latest"
+	},
+	"devDependencies": {
+		"all-contributors-cli": "latest",
+		"browser-sync": "latest",
+		"chai": "latest",
+		"cpy-cli": "latest",
+		"eslint": "latest",
+		"eslint-config-standard": "latest",
+		"eslint-plugin-import": "latest",
+		"eslint-plugin-jest": "latest",
+		"eslint-plugin-jsdoc": "latest",
+		"eslint-plugin-node": "latest",
+		"eslint-plugin-promise": "latest",
+		"eslint-plugin-snakecasejs": "latest",
+		"eslint-plugin-standard": "latest",
+		"gulp": "latest",
+		"gulp-concat": "latest",
+		"gulp-clean-css": "latest",
+		"gulp-terser": "latest",
+		"gulp-rename": "latest",
+		"gulp-nodemon": "latest",
+		"gulp-nunjucks": "latest",
+		"gulp-sass": "latest",
+		"husky": "latest",
+		"jest": "latest",
+		"json": "latest",
+		"markserv": "latest",
+		"pm2": "latest",
+		"yargs": "latest"
+	},
+	"contributors": []
+}

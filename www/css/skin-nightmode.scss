@@ -1,0 +1,71 @@
+$color: #ff0000;
+$color-light: #ff4909;
+$bgcolor: #000000;
+$bgcolor-light: #0f0f0f;
+
+body {
+	background-color: $bgcolor;
+	color: #ffffff;
+}
+
+#yourprojectname {
+	& a {
+		color: $color;
+	}
+
+	& a:hover {
+		color: $color;
+	}
+
+	& .is-theme-color {
+		color: $color;
+	}
+
+	& .is-theme-color:hover {
+		color: $color;
+	}
+
+	& .is-theme-color-light {
+		color: $color-light;
+	}
+
+	& .is-theme-color-light:hover {
+		color: $color-light;
+	}
+
+	& .is-theme-bg {
+		background-color: $bgcolor;
+	}
+
+	& .is-theme-bg-light {
+		background-color: $bgcolor-light;
+	}
+
+	& a.is-theme-bg:hover {
+		background-color: $bgcolor;
+	}
+
+	& a.is-theme-bg-light:hover {
+		background-color: $bgcolor-light;
+	}
+
+	& .is-theme-border{
+		border-color: $bgcolor;
+	}
+
+	& .navbar-link:not(.is-arrowless)::after {
+		border-color: $color;
+	}
+
+	& .link-animate::before{
+		background-color: $color;
+	}
+
+	& .logo-bg a {
+		color: #ffffff;
+	}
+
+	& .navbar-start a {
+		color: #ffffff;
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"name": "yourprojectname",
+    "script": "app.js",
+    "watch": true,
+    "max_restarts": 999,
+    "max_memory_restart": "1024M",
+    "error_file"      : "./logs/errors_pm2.log",
+  	"out_file"        : "./logs/debug_pm2.log",
+    "ignore_watch": [".git", "logs", "databases", "node_modules", "npm-debug.log"],
+    "watch_options": {
+        "followSymlinks": false
+    }
+}

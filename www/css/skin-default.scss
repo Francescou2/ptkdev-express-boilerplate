@@ -1,0 +1,71 @@
+$color: #3498DB;
+$color-light: #2980B9;
+$bgcolor: #000000;
+$bgcolor-light: #363636;
+
+body {
+	background-color: #ffffff;
+	color: $bgcolor;
+}
+
+#yourprojectname {
+	& a {
+		color: $color;
+	}
+
+	& a:hover {
+		color: $color;
+	}
+
+	& .is-theme-color {
+		color: $color;
+	}
+
+	& .is-theme-color:hover {
+		color: $color;
+	}
+
+	& .is-theme-color-light {
+		color: $color-light;
+	}
+
+	& .is-theme-color-light:hover {
+		color: $color-light;
+	}
+
+	& .is-theme-bg {
+		background-color: #ffffff;
+	}
+
+	& .is-theme-bg-light {
+		background-color: ghostwhite;
+	}
+
+	& a.is-theme-bg:hover {
+		background-color: #ffffff;
+	}
+
+	& a.is-theme-bg-light:hover {
+		background-color: ghostwhite;
+	}
+
+	& .is-theme-border{
+		border-color: #ffffff;
+	}
+
+	& .navbar-link:not(.is-arrowless)::after {
+		border-color: $color;
+	}
+
+	& .link-animate::before{
+		background-color: $color;
+	}
+
+	& .logo-bg a {
+		color: $bgcolor-light;
+	}
+
+	& .navbar-start a {
+		color: $bgcolor-light;
+	}
+}

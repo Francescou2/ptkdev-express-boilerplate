@@ -1,0 +1,53 @@
+/* Thanks: https://cssfx.dev/  */
+#yourprojectname {
+
+	& a.link-animate {
+		position: relative;
+	}
+
+	& a.link-animate::before {
+		content: '';
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		transform-origin: bottom right;
+		transform: scaleX(0);
+		transition: transform 0.5s ease;
+	}
+
+	& a.link-animate:hover::before {
+		transform-origin: bottom left;
+		transform: scaleX(1);
+	}
+
+	& .button {
+	  z-index: 1;
+	  font-family: 'Montserrat', sans-serif;
+	  padding: 0.5em 1em;
+	}
+
+	& .button:hover {
+	  cursor: pointer;
+	  animation: jelly 0.5s;
+	}
+
+}
+
+@keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}

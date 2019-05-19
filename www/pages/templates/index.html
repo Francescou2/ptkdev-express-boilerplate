@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ config.system.language }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+{% include "./../commons/header.html" %}
+
+<body id="yourprojectname" itemscope itemtype="http://schema.org/WebPage">
+	{% include "./../commons/menu.html" %}
+	<div class="container">
+		<section class="section">
+			<div class="content has-text-centered">
+				<picture class="ptkdev">
+                    <source srcset="/img/logo.webp" type="image/webp">
+                    <source srcset="/img/logo.png" type="image/png">
+                    <img width="150" height="150" src="/img/logo.png" alt="Patryk Rzucidło (PTKDev)">
+                </picture><br />
+				{{ translate.hello_world }}
+			</div>
+		</section>
+	</div>
+	{% include "./../commons/footer.html" %}
+	<script async src="{{ config.site.fullurl }}/js/full.min.js"></script>
+	{% include "./../commons/services.html" %}
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+
+  "name": "{{ translate.title }}",
+  "short_name": "{{ translate.title }}",
+  "description": "{{ translate.description }}",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "{{ config.site.pwa.color }}",
+  "background_color": "{{ config.site.pwa.bgcolor }}",
+  "icons": [
+  {
+    "src": "{{ config.site.fullurl }}/img/icons/pwa/icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "{{ config.site.fullurl }}/img/icons/pwa/icon-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/?pwa=1"
+}

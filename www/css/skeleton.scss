@@ -1,0 +1,24 @@
+html, body{
+	height: 100%;
+}
+
+#yourprojectname {
+	& .svg {
+		width: 14px;
+		height: 14px;
+		margin-right: 4px;
+	}
+
+	& .footer {
+		height: 140px;
+	}
+
+	& .container {
+		min-height: 100%;
+		min-height: calc(100% - 196px);
+	}
+
+	& .logo-bg a {
+		height: 100%;
+	}
+}

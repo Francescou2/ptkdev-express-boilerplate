@@ -1,0 +1,89 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="default-style" content="{% if 'nightmode' in cookie.style %}nightmode{% else %}default{% endif %}">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>{{ translate.title }}</title>
+	<meta name="description" content="{{ translate.description }}"/>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	{% if 'enabled' in config.site.pingback %}<link rel="pingback" href="{{ config.site.fullurl }}/xmlrpc" />{% endif %}
+
+	<!-- DNS CACHE -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+
+	<!-- {{ translate.title }} -->
+	<meta name="author" content="{{ config.site.author }}" />
+	<meta name="author-mail" content="{{ config.site.email }}" />
+	<meta name="revisit-after" content="6 hours" />
+	<meta name="rating" content="general" />
+	<meta name="language" content="{{ config.system.language }}" />
+	<meta name="hostname" content="{{ config.site.url }}">
+
+	<!-- Translations -->
+	{% for lang in config.site.mui.languages %}
+	<link rel="alternate" hreflang="{{ lang.lang }}" href="{{ lang.url }}" />
+	{% endfor %}
+	<link rel="canonical" href="{{ config.site.fullurl }}" />
+
+	<!-- PWA -->
+	{% if 'enabled' in config.site.pwa.status %}<link rel="manifest" href="{{ config.site.fullurl }}/manifest.webmanifest">{% endif %}
+
+    <!-- Google Webmaster -->
+    <meta name="google-site-verification" content="{{ config.services.google.webmaster_id }}"/>
+    <meta name="google-analytics" content="{{ config.services.google.analytics_id }}">
+
+    <!-- Android -->
+    <meta name="theme-color" content="{{ config.site.pwa.color }}">
+
+	<!-- Facebook -->
+	<meta property="fb:app_id"content="{{ config.services.facebook.app_id }}" />
+	<meta property="og:locale" content="{{ config.system.language }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="{{ config.site.fullurl }}/img/icons/icon-screen.png" />
+	<meta property="og:site_name" content="{{ translate.title }}" />
+	<meta property="og:title" content="{{ translate.title }}" />
+	<meta property="og:url" content="{{ config.site.fullurl }}" />
+	<meta property="og:description" content="{{ translate.description }}" />
+
+	<!-- Windows  -->
+	<meta name="msapplication-navbutton-color" content="{{ config.site.pwa.color }}">
+	<meta name="msapplication-TileColor" content="{{ config.site.pwa.color }}">
+	<meta name="msapplication-TileImage" content="{{ config.site.fullurl }}/img/icons/ms/icon-144x144.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{ translate.title }}" />
+    <meta name="twitter:title" content="{{ translate.title }}" />
+    <meta name="twitter:description" content="{{ translate.description }}" />
+    <meta name="twitter:creator" content="@{{ config.site.social.twitter }}" />
+    <meta name="twitter:image" content="{{ config.site.fullurl }}/img/screenshot/screen-800x300.png" />
+
+    <!-- Apple -->
+    <meta name="apple-mobile-web-app-title" content="{{ translate.title }}" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <link rel="apple-touch-icon" type="image/png" href="{{ config.site.fullurl }}/img/icons/apple/icon-512x512.png" />
+    <link rel="apple-touch-startup-image" href="{{ config.site.fullurl }}/img/icons/apple/splash-320x480.png" />
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="{{ config.site.fullurl }}/favicon.ico" />
+	<link rel="icon" type="image/png" href="{{ config.site.fullurl }}/favicon.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ config.site.fullurl }}/img/icons/favicon/icon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ config.site.fullurl }}/img/icons/favicon/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="{{ config.site.fullurl }}/img/icons/favicon/icon-48x48.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="{{ config.site.fullurl }}/img/icons/android/icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="{{ config.site.fullurl }}/img/icons/android/icon-512x512.png">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Bhai">
+	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/full.min.css" />
+	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/skin-default.min.css" title="default" {% if 'nightmode' in cookie.style %}disabled{% endif %} />
+	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/skin-nightmode.min.css" title="nightmode" {% if 'default' in cookie.style %}disabled{% endif %} />
+
+	<!-- Nightmode  -->
+	<meta name="nightmode" content="{% if 'nightmode' in cookie.style %}enable{% else %}disable{% endif %}" />
+
+	<style>
+	{% include "./../../css/skeleton.min.css" %}
+	</style>
+</head>

@@ -37,7 +37,8 @@
 See scripts on `package.json` for more feature and prod mode.
 
 ## 📚 Documentation
-1. Run `npm run docs`
+1. Run `npm run docs-init`
+2. Run `npm run docs`
 
 If you want are available online [here](http://docs.socialmanager.tools/README.md).
 

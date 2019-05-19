@@ -1,0 +1,45 @@
+#yourprojectname {
+	& .is-patreon {
+		background-color: #F96753;
+		color: #052A49;
+	}
+
+	& .is-patreon:hover {
+		color: #ffffff;
+	}
+
+	& .fa-sun {
+		color: #F1C40F;
+	}
+
+	& .fa-moon {
+		color: #2C3E50;
+	}
+
+	& .fa-home {
+		color: #3498DB;
+	}
+
+	& .fa-palette {
+		color: #8E44AD;
+	}
+
+	& .fa-chrome {
+		color: #27AE60;
+	}
+
+	& svg.fa-github-alt {
+		color: #333333;
+		height: 16px;
+		width: 16px;
+	}
+
+	& .is-github {
+		color: #333333;
+	}
+
+	& .logo-bg a {
+		font-family: 'Baloo Bhai', cursive;
+		font-size: 24px;
+	}
+}

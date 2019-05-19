@@ -1,0 +1,24 @@
+# App #
+#######
+configs/*.js
+www/js/vendor/
+www/css/vendor/
+www/js/*.min.js
+www/css/*.min.css
+.github
+databases/
+tests/
+docs/
+logs/
+docker/
+Dockerfile
+Dockerfile.*
+bot.js
+.gitmodules
+.jshintrc
+.gitattributes
+.eslintrc.json
+.editorconfig
+.pm2-process.json
+.all-contributorsrc
+.eslintcache
