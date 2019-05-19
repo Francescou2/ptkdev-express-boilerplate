@@ -55,8 +55,8 @@
 		}
 	},
 	"keywords": [
-		"social",
-		"network"
+		"express",
+		"boilerplate"
 	],
 	"engines": {
 		"node": ">=10.0.0"

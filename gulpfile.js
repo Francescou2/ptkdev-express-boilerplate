@@ -123,7 +123,7 @@ gulp.task("browser-sync", function() {
 	gulp.watch(["./www/css/skeleton.scss"]).on("change", gulp.parallel("build-css-skeleton"));
 	gulp.watch(["./www/css/skin-default.scss", "./www/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css-skin"));
 
-	gulp.watch(["./www/**/*.js", "!./www/js/full.min.js"]).on("change", gulp.parallel("build-js"));
+	gulp.watch(["./configs/**/*", "./www/**/*.js", "!./www/js/full.min.js"]).on("change", gulp.parallel("build-js"));
 });
 
 /**

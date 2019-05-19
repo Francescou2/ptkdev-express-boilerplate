@@ -28,10 +28,15 @@ module.exports = {
 	"hello_world": "Ciao <strong>Mondo</strong>.",
 	"copyright": "Questo codice sorgente è sotto licenza <a href=\"http://opensource.org/licenses/mit-license.php\">MIT</a>. Il contenuto del sito usa la licenza <a href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/\">CC BY 4.0</a>.",
 	"home": "Pagina iniziale",
+	"sw_reg": "Service Worker Registrato",
+	"sw_ready": "Service Worker Pronto",
+	"config_fix": "Config Sistemato...",
+	"pwa_installed": "L'utente ha accettato il popup del Service Worker",
+	"pwa_dismiss": "L'utente ha annullato il popup del  Service Worker",
 	"install_pwa": "Installa PWA",
 	"themes": "Temi",
 	"themes_default": "Classico",
-	"themes_nightmode": "Modalità notturna",
+	"themes_nightmode": "Notturno",
 	"patreon": "Patreon",
 	"github": "Github"
 };
