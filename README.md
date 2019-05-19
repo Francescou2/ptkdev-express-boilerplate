@@ -10,7 +10,7 @@
 [![](https://img.shields.io/badge/donate-paypal-005EA6.svg)](http://paypal.ptkdev.io) [![](https://img.shields.io/badge/donate-patreon-F87668.svg)](http://patreon.ptkdev.io) [![](https://img.shields.io/badge/donate-opencollective-5DA4F9.svg)](http://opencollective.ptkdev.io) [![](https://img.shields.io/badge/buy%20me-coffee-4B788C.svg)](http://coffee.ptkdev.io)
 
 ## 🔖 Screenshot
-[![](https://raw.githubusercontent.com/ptkdev-boilerplate/ptkdev-express-boilerplate/master/www/img/screenshot/screen-800x300.png)](#)
+[![](https://raw.githubusercontent.com/ptkdev-boilerplate/ptkdev-express-boilerplate/master/www/img/screenshot/express-app.png)](#)
 
 ## 💡 Features
 > Why? I like to have a solid starting point and have full control over it.
