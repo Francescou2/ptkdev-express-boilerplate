@@ -101,9 +101,6 @@ class Utils {
      *
      */
 	fix_config(config) {
-		let tag = "utils::fix_config()";
-		this.log.info(tag, this.lang.translate("config_fix"));
-
 		if (config.system.debug === "enabled") {
 			config.site.www = "hide";
 			config.site.protocol = "http://";

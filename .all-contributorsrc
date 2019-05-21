@@ -1,6 +1,6 @@
 {
-	"projectName": "yourprojectname",
-	"projectOwner": "ptkdev",
+	"projectName": "ptkdev-express-boilerplate",
+	"projectOwner": "ptkdev-boilerplate",
 	"repoType": "github",
 	"repoHost": "https://github.com",
 	"files": [

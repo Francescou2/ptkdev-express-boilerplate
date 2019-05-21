@@ -72,7 +72,7 @@ gulp.task("build-css-skin-nightmode", function() {
 });
 
 gulp.task("build-js", function() {
-	let jsarray = ["./www/js/vendor/cash-dom/cash.min.js", "./www/js/main.js", "./www/js/skin-switcher.js", "./www/js/main.js", "./www/js/events.js"];
+	let jsarray = ["./www/js/vendor/cash-dom/cash.min.js", "./www/js/vendor/lazyload/lazyload.min.js", "./www/js/main.js", "./www/js/skin-switcher.js", "./www/js/main.js", "./www/js/events.js"];
 
 	if (config.site.pwa.status === "enabled") {
 		jsarray.push("./www/js/pwa/prompt.js");
