@@ -9,7 +9,9 @@
 	{% if 'enabled' == config.site.pingback %}<link rel="pingback" href="{{ config.site.fullurl }}/xmlrpc" />{% endif %}
 
 	<!-- DNS CACHE -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+	{% for cdn in config.site.dns_prefetch %}
+	<link rel="dns-prefetch" href="{{ cdn }}"/>
+	{% endfor %}
 
 	<!-- {{ translate.title }} -->
 	<meta name="author" content="{{ config.site.author }}" />
@@ -23,7 +25,7 @@
 	{% for lang in config.site.mui.languages %}
 	<link rel="alternate" hreflang="{{ lang.lang }}" href="{{ lang.url }}" />
 	{% endfor %}
-	<link rel="canonical" href="{{ config.site.fullurl }}/{{ page.url }}" />
+	<link rel="canonical" href="{{ config.site.fullurl }}{{ page.url }}" />
 
 	<!-- PWA -->
 	{% if 'enabled' == config.site.pwa.status %}<link rel="manifest" href="{{ config.site.fullurl }}/manifest.webmanifest">{% endif %}
@@ -39,7 +41,7 @@
 	<meta property="fb:app_id"content="{{ config.services.facebook.app_id }}" />
 	<meta property="og:locale" content="{{ config.system.language }}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="{{ config.site.fullurl }}/img/icons/icon-screen.png" />
+	<meta property="og:image" content="{{ config.site.fullurl }}/img/img/screenshot/screen-800x300.png" />
 	<meta property="og:site_name" content="{{ translate.title }}" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:url" content="{{ config.site.fullurl }}" />

@@ -35,7 +35,7 @@ class Yourprojectname {
 		this.lang = new Translate();
 		this.oauth = new Pages.Oauth();
 		this.pwa = new Pages.Pwa();
-		this.sitemap = new Pages.Sitemap();
+		this.seo = new Pages.Seo();
 		this.static = new Pages.Static_files();
 		this.pages = new Pages.Pages();
 		this.pages_policy = new Pages.Policy();
@@ -84,6 +84,10 @@ class Yourprojectname {
 		}
 
 		this.pages.index();
+		this.pages.offline();
+		this.pwa.updates();
+		this.seo.sitemap();
+		this.seo.robotstxt();
 		this.pages_policy.privacy();
 		this.pages_policy.cookie();
 		this.pages.error_404();

@@ -1,35 +1,35 @@
 module.exports = {
 	"services": {
 		"jwt": {
-			"status": "disbaled",
+			"status": "disabled",
 			"token_secret": ""
 		},
 		"express": {
-			"status": "disbaled",
+			"status": "disabled",
 			"session_key": "",
 		},
 		"google": {
-			"status": "disbaled",
+			"status": "disabled",
 			"consumer_key": "",
 			"consumer_secret": ""
 		},
 		"facebook": {
-			"status": "disbaled",
+			"status": "disabled",
 			"consumer_key": "",
 			"consumer_secret": "",
 		},
 		"twitter": {
-			"status": "disbaled",
+			"status": "disabled",
 			"consumer_key": "",
 			"consumer_secret": ""
 		},
 		"instagram": {
-			"status": "disbaled",
+			"status": "disabled",
 			"consumer_key": "",
 			"consumer_secret": ""
 		},
 		"github": {
-			"status": "disbaled",
+			"status": "disabled",
 			"consumer_key": "",
 			"consumer_secret": ""
 		}

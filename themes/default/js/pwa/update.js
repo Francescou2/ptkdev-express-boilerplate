@@ -7,7 +7,12 @@ caches.open("{{ config.site.url }}").then(function(cache) {
 	}).then(function(json) {
 		"PWA Update: clean cache...";
 		if ("{{ config.site.pwa.version }}" == json.version) {
-			cache.delete("/images/image.png");
+			{% for url in config.site.pwa.files %}
+			cache.delete("{{ config.site.fullurl }}{{ url }}");
+			{% endfor %}
+			{% for url in config.site.pwa.pages %}
+			cache.delete("{{ config.site.fullurl }}{{ url }}");
+			{% endfor %}
 		}
 	});
 });

@@ -1,7 +1,7 @@
 self.addEventListener("install", function(e) {
 	e.waitUntil(
 		caches.open("{{ config.site.url }}").then(function(cache) {
-			return cache.addAll([]);
+			return cache.addAll(["{{ config.site.pwa.cache }}"]);
 		})
 	);
 });

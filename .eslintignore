@@ -2,4 +2,5 @@ themes/default/css/vendor/
 themes/default/js/vendor/
 themes/default/js/**/*.min.js
 themes/default/js/policy/cookielaw.js
+themes/default/js/pwa/*
 themes/default/pages/commons/services.html

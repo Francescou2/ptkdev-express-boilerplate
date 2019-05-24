@@ -18,5 +18,5 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "start_url": "/?pwa=1"
+  "start_url": "{{ config.site.fullurl }}/?pwa=1"
 }

@@ -47,13 +47,17 @@ module.exports = {
 		},
 		"pwa": {
 			"status": "enabled",
+			"install": "enabled",
 			"manifest": "/manifest.webmanifest",
 			"service_worker": "/sw.js",
 			"color": "#ffffff",
 			"bgcolor": "#ffffff",
 			"files": [
+				"/manifest.webmanifest",
 				"/js/full.min.js",
 				"/css/full.min.css",
+				"/css/skin-default.min.css",
+				"/css/skin-nightmode.min.css",
 				"/img/lazy.png",
 				"/img/logo.png",
 				"/img/logo.webp"

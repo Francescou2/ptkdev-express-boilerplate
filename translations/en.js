@@ -46,6 +46,7 @@ module.exports = {
 	"themes": "Themes",
 	"themes_default": "Default",
 	"themes_nightmode": "Night Mode",
+	"help": "Help",
 	"patreon": "Patreon",
 	"github": "Github"
 };

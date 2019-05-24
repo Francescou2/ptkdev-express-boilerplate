@@ -33,50 +33,50 @@ const translate = require(`./translations/${config.system.language}`);
 *
 */
 gulp.task("build-css", function() {
-	return gulp.src(["./themes/default/css/vendor/bulma/bulma.min.css", "./themes/default/css/main.scss", "./themes/default/css/animate.scss"])
+	return gulp.src([`./themes/${config.site.theme}/css/vendor/bulma/bulma.min.css`, `./themes/${config.site.theme}/css/main.scss`, `./themes/${config.site.theme}/css/animate.scss`])
 		.pipe(gulp_concat({path: "./full.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("full.min.css"))
-		.pipe(gulp.dest("./themes/default/css/"))
+		.pipe(gulp.dest(`./themes/${config.site.theme}/css/`))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("build-css-skeleton", function() {
-	return gulp.src(["./themes/default/css/skeleton.scss"])
+	return gulp.src([`./themes/${config.site.theme}/css/skeleton.scss`])
 		.pipe(gulp_concat({path: "./skeleton.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("skeleton.min.css"))
-		.pipe(gulp.dest("./themes/default/css/"));
+		.pipe(gulp.dest(`./themes/${config.site.theme}/css/`));
 });
 
 gulp.task("build-css-skin-default", function() {
-	return gulp.src(["./themes/default/css/skin-default.scss"])
+	return gulp.src([`./themes/${config.site.theme}/css/skin-default.scss`])
 		.pipe(gulp_concat({path: "./skin-default.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("skin-default.min.css"))
-		.pipe(gulp.dest("./themes/default/css/"))
+		.pipe(gulp.dest(`./themes/${config.site.theme}/css/`))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("build-css-skin-nightmode", function() {
-	return gulp.src(["./themes/default/css/skin-nightmode.scss"])
+	return gulp.src([`./themes/${config.site.theme}/css/skin-nightmode.scss`])
 		.pipe(gulp_concat({path: "./skin-nightmode.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("skin-nightmode.min.css"))
-		.pipe(gulp.dest("./themes/default/css/"))
+		.pipe(gulp.dest(`./themes/${config.site.theme}/css/`))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("build-js", function() {
-	let jsarray = ["./themes/default/js/vendor/cash-dom/cash.min.js", "./themes/default/js/vendor/lazyload/lazyload.min.js", "./themes/default/js/main.js", "./themes/default/js/skin-switcher.js", "./themes/default/js/policy/cookielaw.js", "./themes/default/js/main.js", "./themes/default/js/events.js"];
+	let jsarray = [`./themes/${config.site.theme}/js/vendor/cash-dom/cash.min.js`, `./themes/${config.site.theme}/js/vendor/lazyload/lazyload.min.js`, `./themes/${config.site.theme}/js/main.js`, `./themes/${config.site.theme}/js/skin-switcher.js`, `./themes/${config.site.theme}/js/policy/cookielaw.js`, `./themes/${config.site.theme}/js/main.js`, `./themes/${config.site.theme}/js/events.js`];
 
 	if (config.site.pwa.status === "enabled") {
-		jsarray.push("./themes/default/js/pwa/prompt.js");
-		jsarray.push("./themes/default/js/pwa/update.js");
+		jsarray.push(`./themes/${config.site.theme}/js/pwa/prompt.js`);
+		jsarray.push(`./themes/${config.site.theme}/js/pwa/update.js`);
 	}
 
 	return gulp.src(jsarray)
@@ -84,7 +84,7 @@ gulp.task("build-js", function() {
 		.pipe(gulp_nunjucks.compile({config: config, translate: translate}))
 		.pipe(gulp_minifyjs())
 		.pipe(gulp_rename("full.min.js"))
-		.pipe(gulp.dest("./themes/default/js/"));
+		.pipe(gulp.dest(`./themes/${config.site.theme}/js/`));
 });
 
 gulp.task("build-css-skin", gulp.parallel("build-css-skin-default", "build-css-skin-nightmode"));
@@ -110,20 +110,20 @@ gulp.task("browser-sync", function() {
 			      "./modules/**/*",
 			      "./translations/**/*",
 			      "./configs/**/*",
-			      "./themes/default/**/*.html",
-			      "./themes/default/css/skeleton.min.css",
-			      "./themes/default/js/full.min.js"
+			      `./themes/${config.site.theme}/**/*.html`,
+			      `./themes/${config.site.theme}/css/skeleton.min.css`,
+			      `./themes/${config.site.theme}/js/full.min.js`
 			     ],
 		"ext": "js, html, css"
 	}).on("restart", function() {
 		browsersync.reload();
 	});
 
-	gulp.watch(["./themes/default/**/*.scss", "!./themes/default/css/skeleton.scss", "!./themes/default/css/skin-default.scss", "!./themes/default/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css"));
-	gulp.watch(["./themes/default/css/skeleton.scss"]).on("change", gulp.parallel("build-css-skeleton"));
-	gulp.watch(["./themes/default/css/skin-default.scss", "./themes/default/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css-skin"));
+	gulp.watch([`./themes/${config.site.theme}/**/*.scss`, `!./themes/${config.site.theme}/css/skeleton.scss`, `!./themes/${config.site.theme}/css/skin-default.scss`, `!./themes/${config.site.theme}/css/skin-nightmode.scss`]).on("change", gulp.parallel("build-css"));
+	gulp.watch([`./themes/${config.site.theme}/css/skeleton.scss`]).on("change", gulp.parallel("build-css-skeleton"));
+	gulp.watch([`./themes/${config.site.theme}/css/skin-default.scss`, `./themes/${config.site.theme}/css/skin-nightmode.scss`]).on("change", gulp.parallel("build-css-skin"));
 
-	gulp.watch(["./configs/**/*", "./themes/default/**/*.js", "!./themes/default/js/full.min.js"]).on("change", gulp.parallel("build-js"));
+	gulp.watch(["./configs/**/*", `./themes/${config.site.theme}/**/*.js`, `!./themes/${config.site.theme}/js/full.min.js`]).on("change", gulp.parallel("build-js"));
 });
 
 /**

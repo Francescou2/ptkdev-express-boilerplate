@@ -13,6 +13,6 @@ module.exports = {
 	"Static_files": require("../pages/static"),
 	"Oauth": require("../pages/oauth"),
 	"Pwa": require("../pages/pwa"),
-	"Sitemap": require("../pages/seo-sitemap"),
+	"Seo": require("../pages/seo"),
 	"Policy": require("../pages/policy")
 };
