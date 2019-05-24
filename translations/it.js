@@ -43,7 +43,7 @@ module.exports = {
 	"pwa_installed": "L'utente ha accettato il popup del Service Worker",
 	"pwa_dismiss": "L'utente ha annullato il popup del  Service Worker",
 	"install_pwa": "Installa PWA",
-	"pwa_clean": "PWA Aggiornato: pulizia cache...",
+	"pwa_clean": "PWA Aggiornata: pulizia cache avviata...",
 	"themes": "Temi",
 	"themes_default": "Classico",
 	"themes_nightmode": "Notturno",

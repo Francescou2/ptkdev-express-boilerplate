@@ -16,10 +16,10 @@
 > Why? I like to have a solid starting point and have full control over it.
 
 * [✔️] Express app/web site (Boilerplate)
-* [✔️] Folder `www` compatible with boilerplate of Electron and Cordova
+* [✔️] Themes compatible with boilerplate of Electron and Cordova
 * [✔️] Easy to use, work and deploy
 * [✔️] Browser sync, auto refresh, auto reload
-* [✔️] PWA + Service Worker
+* [✔️] PWA + Service Worker + Offline
 * [✔️] Images LazyLoad
 * [✔️] Themes Switch
 * [✔️] Nightmode

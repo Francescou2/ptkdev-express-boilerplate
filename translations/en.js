@@ -43,7 +43,7 @@ module.exports = {
 	"pwa_installed": "User accepted Service Worker App prompt",
 	"pwa_dismiss": "User dismissed Service Worker App prompt",
 	"install_pwa": "Install PWA",
-	"pwa_clean": "PWA Aggiornato: pulizia cache...",
+	"pwa_clean": "PWA Updated: clear cache started...",
 	"themes": "Themes",
 	"themes_default": "Default",
 	"themes_nightmode": "Night Mode",

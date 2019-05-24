@@ -5,8 +5,9 @@ caches.open("{{ config.site.url }}").then(function(cache) {
 			return response.json();
 		}
 	}).then(function(json) {
-		console.log("{{ translate.pwa_clean }} ");
 		if ("{{ config.site.pwa.version }}" !== json.version) {
+			console.log("{{ translate.pwa_clean }} ");
+
 			{% for url in config.site.pwa.files %}
 			cache.delete("{{ config.site.fullurl }}{{ url }}");
 			{% endfor %}
