@@ -28,6 +28,7 @@ module.exports = {
 	},
 
 	"site": {
+		"theme": "default",
 		"author": "Patryk Rzucidło (PTKDev)",
 		"email": "support@ptkdev.io",
 		"protocol": "http://",               // force https urls or http urls
@@ -53,12 +54,14 @@ module.exports = {
 			"files": [
 				"/js/full.min.js",
 				"/css/full.min.css",
+				"/img/lazy.png",
 				"/img/logo.png",
 				"/img/logo.webp"
 			],
 			"pages": [
 				"/",
 				"/?pwa=1",
+				"/offline",
 				"/policy/privacy",
 				"/policy/cookie"
 			],

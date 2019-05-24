@@ -10,7 +10,7 @@
 [![](https://img.shields.io/badge/donate-paypal-005EA6.svg)](http://paypal.ptkdev.io) [![](https://img.shields.io/badge/donate-patreon-F87668.svg)](http://patreon.ptkdev.io) [![](https://img.shields.io/badge/buy%20me-coffee-4B788C.svg)](http://coffee.ptkdev.io)
 
 ## 🔖 Screenshot
-[![](https://raw.githubusercontent.com/ptkdev-boilerplate/ptkdev-express-boilerplate/master/www/img/screenshot/express-app.png)](#)
+[![](https://raw.githubusercontent.com/ptkdev-boilerplate/ptkdev-express-boilerplate/master/themes/default/img/screenshot/express-app.png)](#)
 
 ## 💡 Features
 > Why? I like to have a solid starting point and have full control over it.
@@ -20,7 +20,8 @@
 * [✔️] Easy to use, work and deploy
 * [✔️] Browser sync, auto refresh, auto reload
 * [✔️] PWA + Service Worker
-* [✔️] LazyLoad
+* [✔️] Images LazyLoad
+* [✔️] Themes Switch
 * [✔️] Nightmode
 * [✔️] Multi language
 * [❌] Switch language in app (**coming soon**)
@@ -52,7 +53,7 @@ Thanks to all our backers! 🙏 Become a backer on [patreon](http://patreon.ptkd
 
 
 ## ❤️ Contributing
-I 💟 contributions! I will happily accept your pull request! Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is horrible, sorry), new modes, best css selectors, fix and new feature! Read [Developers Guidelines](http://docs.socialmanager.tools/developers/guidesline/README.md) for best practices. Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
+I 💟 contributions! I will happily accept your pull request! Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is horrible, sorry), new modes, best css selectors, fix and new feature! Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -66,10 +67,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 ## 📲 Tools
 [![](https://img.shields.io/badge/app-social%20manager%20tools-ff7f19.svg)](http://socialmanager.tools/)
-[![](https://img.shields.io/badge/api-instagram%20bot-895a4d.svg)](https://github.com/yourprojectname/yourprojectname-igbot)
-[![](https://img.shields.io/badge/api-twitter%20bot-21B7F4.svg)](https://github.com/yourprojectname/yourprojectname-twbot)
-[![](https://img.shields.io/badge/api-facebook%20bot-3b5998.svg)](https://github.com/yourprojectname/yourprojectname-fbbot)
-[![](https://img.shields.io/badge/telegram%20bot-feed%20rss%20for%20wordpress%20&amp;%20medium-00AB6C.svg)](https://github.com/yourprojectname/yourprojectname-tgbot)
+[![](https://img.shields.io/badge/api-instagram%20bot-895a4d.svg)](https://github.com/social-manager-tools/socialmanagertools-igbot)
+[![](https://img.shields.io/badge/api-twitter%20bot-21B7F4.svg)](https://github.com/social-manager-tools/socialmanagertools-twbot)
+[![](https://img.shields.io/badge/api-facebook%20bot-3b5998.svg)](https://github.com/social-manager-tools/socialmanagertools-fbbot)
+[![](https://img.shields.io/badge/telegram%20bot-feed%20rss%20for%20wordpress%20&amp;%20medium-00AB6C.svg)](https://github.com/social-manager-tools/social-manager-tools-tgbot)
 
 [![](https://img.shields.io/badge/app-meingifs-E1215B.svg)](https://meingifs.pics/)
 [![](https://img.shields.io/badge/stickers-ptkdev-128C7E.svg)](https://stickers.ptkdev.io/)

@@ -33,50 +33,50 @@ const translate = require(`./translations/${config.system.language}`);
 *
 */
 gulp.task("build-css", function() {
-	return gulp.src(["./www/css/vendor/bulma/bulma.min.css", "./www/css/main.scss", "./www/css/animate.scss"])
+	return gulp.src(["./themes/default/css/vendor/bulma/bulma.min.css", "./themes/default/css/main.scss", "./themes/default/css/animate.scss"])
 		.pipe(gulp_concat({path: "./full.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("full.min.css"))
-		.pipe(gulp.dest("./www/css/"))
+		.pipe(gulp.dest("./themes/default/css/"))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("build-css-skeleton", function() {
-	return gulp.src(["./www/css/skeleton.scss"])
+	return gulp.src(["./themes/default/css/skeleton.scss"])
 		.pipe(gulp_concat({path: "./skeleton.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("skeleton.min.css"))
-		.pipe(gulp.dest("./www/css/"));
+		.pipe(gulp.dest("./themes/default/css/"));
 });
 
 gulp.task("build-css-skin-default", function() {
-	return gulp.src(["./www/css/skin-default.scss"])
+	return gulp.src(["./themes/default/css/skin-default.scss"])
 		.pipe(gulp_concat({path: "./skin-default.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("skin-default.min.css"))
-		.pipe(gulp.dest("./www/css/"))
+		.pipe(gulp.dest("./themes/default/css/"))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("build-css-skin-nightmode", function() {
-	return gulp.src(["./www/css/skin-nightmode.scss"])
+	return gulp.src(["./themes/default/css/skin-nightmode.scss"])
 		.pipe(gulp_concat({path: "./skin-nightmode.min.tmp"}))
 		.pipe(gulp_sass())
 		.pipe(gulp_minifycss())
 		.pipe(gulp_rename("skin-nightmode.min.css"))
-		.pipe(gulp.dest("./www/css/"))
+		.pipe(gulp.dest("./themes/default/css/"))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("build-js", function() {
-	let jsarray = ["./www/js/vendor/cash-dom/cash.min.js", "./www/js/vendor/lazyload/lazyload.min.js", "./www/js/main.js", "./www/js/skin-switcher.js", "./www/js/main.js", "./www/js/events.js"];
+	let jsarray = ["./themes/default/js/vendor/cash-dom/cash.min.js", "./themes/default/js/vendor/lazyload/lazyload.min.js", "./themes/default/js/main.js", "./themes/default/js/skin-switcher.js", "./themes/default/js/policy/cookielaw.js", "./themes/default/js/main.js", "./themes/default/js/events.js"];
 
 	if (config.site.pwa.status === "enabled") {
-		jsarray.push("./www/js/pwa/prompt.js");
-		jsarray.push("./www/js/pwa/update.js");
+		jsarray.push("./themes/default/js/pwa/prompt.js");
+		jsarray.push("./themes/default/js/pwa/update.js");
 	}
 
 	return gulp.src(jsarray)
@@ -84,7 +84,7 @@ gulp.task("build-js", function() {
 		.pipe(gulp_nunjucks.compile({config: config, translate: translate}))
 		.pipe(gulp_minifyjs())
 		.pipe(gulp_rename("full.min.js"))
-		.pipe(gulp.dest("./www/js/"));
+		.pipe(gulp.dest("./themes/default/js/"));
 });
 
 gulp.task("build-css-skin", gulp.parallel("build-css-skin-default", "build-css-skin-nightmode"));
@@ -110,20 +110,20 @@ gulp.task("browser-sync", function() {
 			      "./modules/**/*",
 			      "./translations/**/*",
 			      "./configs/**/*",
-			      "./www/**/*.html",
-			      "./www/css/skeleton.min.css",
-			      "./www/js/full.min.js"
+			      "./themes/default/**/*.html",
+			      "./themes/default/css/skeleton.min.css",
+			      "./themes/default/js/full.min.js"
 			     ],
 		"ext": "js, html, css"
 	}).on("restart", function() {
 		browsersync.reload();
 	});
 
-	gulp.watch(["./www/**/*.scss", "!./www/css/skeleton.scss", "!./www/css/skin-default.scss", "!./www/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css"));
-	gulp.watch(["./www/css/skeleton.scss"]).on("change", gulp.parallel("build-css-skeleton"));
-	gulp.watch(["./www/css/skin-default.scss", "./www/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css-skin"));
+	gulp.watch(["./themes/default/**/*.scss", "!./themes/default/css/skeleton.scss", "!./themes/default/css/skin-default.scss", "!./themes/default/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css"));
+	gulp.watch(["./themes/default/css/skeleton.scss"]).on("change", gulp.parallel("build-css-skeleton"));
+	gulp.watch(["./themes/default/css/skin-default.scss", "./themes/default/css/skin-nightmode.scss"]).on("change", gulp.parallel("build-css-skin"));
 
-	gulp.watch(["./configs/**/*", "./www/**/*.js", "!./www/js/full.min.js"]).on("change", gulp.parallel("build-js"));
+	gulp.watch(["./configs/**/*", "./themes/default/**/*.js", "!./themes/default/js/full.min.js"]).on("change", gulp.parallel("build-js"));
 });
 
 /**

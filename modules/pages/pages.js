@@ -37,7 +37,32 @@ class Pages {
 			} else {
 				cookies = req.cookies;
 			}
-		    res.render("./www/pages/templates/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
+
+			res.set("Content-Type", "text/html");
+		    res.render("./pages/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
+		});
+	}
+
+	/**
+	 * Initialize errors (404)
+	 * =====================
+	 * Express render
+	 *
+	 */
+	error_404() {
+		let self = this;
+		this.core.app.get("/*", function(req, res) {
+			let cookies = {};
+			if (typeof req.cookies.style === "undefined") {
+				cookies = req.cookies;
+				cookies.style = "default";
+			} else {
+				cookies = req.cookies;
+			}
+
+			res.set("Content-Type", "text/html");
+			res.status(404);
+		    res.render("./pages/errors/404/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
 		});
 	}
 }

@@ -10,6 +10,7 @@
  */
 const core = require("./../core/core");
 const Log = require("./../logger/log");
+const lang = require(`./../routes/languages`);
 
 class Policy {
 	constructor() {
@@ -17,6 +18,7 @@ class Policy {
 
 		this.LOG_NAME = "pages";
 		this.log = new Log(this.LOG_NAME);
+		this.lang = lang;
 	}
 
 	/**
@@ -28,7 +30,16 @@ class Policy {
 	privacy() {
 		let self = this;
 		this.core.app.get("/policy/privacy", function(req, res) {
-		    res.render("./www/pages/policy/privacy.html", {"config": self.core.config});
+			let cookies = {};
+			if (typeof req.cookies.style === "undefined") {
+				cookies = req.cookies;
+				cookies.style = "default";
+			} else {
+				cookies = req.cookies;
+			}
+
+			res.set("Content-Type", "text/html");
+		    res.render("./pages/policy/privacy/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
 		});
 	}
 
@@ -41,7 +52,16 @@ class Policy {
 	cookie() {
 		let self = this;
 		this.core.app.get("/policy/cookie", function(req, res) {
-		    res.render("./www/pages/policy/cookie.html", {"config": self.core.config});
+			let cookies = {};
+			if (typeof req.cookies.style === "undefined") {
+				cookies = req.cookies;
+				cookies.style = "default";
+			} else {
+				cookies = req.cookies;
+			}
+
+			res.set("Content-Type", "text/html");
+		    res.render("./pages/policy/cookie/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
 		});
 	}
 }

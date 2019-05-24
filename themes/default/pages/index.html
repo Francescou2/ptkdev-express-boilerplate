@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ config.system.language }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-{% include "./../commons/header.html" %}
+{% set page = {
+		url: "/",
+		title: translate.home,
+		description: translate.home_description
+	}
+%}
+{% include 'pages/commons/header.html' %}
 
 <body id="yourprojectname" itemscope itemtype="http://schema.org/WebPage">
-	{% include "./../commons/menu.html" %}
+	{% include "pages/commons/menu.html" %}
 	<div class="container">
 		<section class="section">
 			<div class="content has-text-centered">
@@ -16,9 +22,9 @@
 			</div>
 		</section>
 	</div>
-	{% include "./../commons/footer.html" %}
-	<script async src="{{ config.site.fullurl }}/js/full.min.js"></script>
-	{% include "./../commons/services.html" %}
+	{% include "pages/commons/footer.html" %}
+	<script defer src="{{ config.site.fullurl }}/js/full.min.js"></script>
+	{% include "pages/commons/services.html" %}
 
 </body>
 </html>

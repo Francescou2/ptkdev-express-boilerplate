@@ -52,7 +52,7 @@ class Yourprojectname {
 		this.utils.create_files();
 		this.core.config = this.utils.fix_config(this.core.config);
 
-		nunjucks.configure("./", {
+		nunjucks.configure(`./themes/${this.core.config.site.theme}/`, {
 		    autoescape: false,
 		    express: this.core.app
 		});
@@ -84,7 +84,9 @@ class Yourprojectname {
 		}
 
 		this.pages.index();
-		// this.pages.login();
+		this.pages_policy.privacy();
+		this.pages_policy.cookie();
+		this.pages.error_404();
 
 	}
 

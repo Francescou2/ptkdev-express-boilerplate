@@ -68,4 +68,12 @@ body {
 	& .navbar-start a {
 		color: #ffffff;
 	}
+
+	& .cookielaw {
+		background-color: $bgcolor-light;
+	}
+
+	& .cookie-dismiss {
+	    background-color: #ffffff;
+	}
 }

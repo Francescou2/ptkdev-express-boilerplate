@@ -28,7 +28,7 @@ class Sitemap {
 	sitemap() {
 		let self = this;
 		this.core.app.get("/sitemap.xml", function(req, res) {
-		    res.render("./www/pages/seo/sitemap.xml", {"config": self.core.config});
+		    res.render("./pages/sitemap.xml", {"config": self.core.config});
 		});
 	}
 }

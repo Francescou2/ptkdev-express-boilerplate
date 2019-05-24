@@ -1,3 +1,5 @@
-www/css/vendor/
-www/js/vendor/
-www/js/**/*.min.js
+themes/default/css/vendor/
+themes/default/js/vendor/
+themes/default/js/**/*.min.js
+themes/default/js/policy/cookielaw.js
+themes/default/pages/commons/services.html

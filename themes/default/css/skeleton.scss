@@ -21,4 +21,17 @@ html, body{
 	& .logo-bg a {
 		height: 100%;
 	}
+
+	& .cookielaw {
+		width: 100%;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		padding: 10px;
+	}
+
+	& .cookie-dismiss {
+	    padding: 3px 8px;
+	    border-radius: 5%;
+	}
 }

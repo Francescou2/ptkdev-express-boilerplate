@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ config.system.language }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+{% set page = {
+		url: "/policy/privacy",
+		title: translate.privacy_policy,
+		description: translate.privacy_policy
+	}
+%}
+{% include 'pages/commons/header.html' %}
+
+<body id="yourprojectname" itemscope itemtype="http://schema.org/WebPage">
+	{% include "pages/commons/menu.html" %}
+	<div class="container">
+		<section class="section">
+			<div class="content has-text-centered">
+				{{ translate.privacy_policy }}
+			</div>
+		</section>
+	</div>
+	{% include "pages/commons/footer.html" %}
+	<script async src="{{ config.site.fullurl }}/js/full.min.js"></script>
+	{% include "pages/commons/services.html" %}
+
+</body>
+</html>

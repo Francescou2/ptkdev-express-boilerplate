@@ -1,10 +1,10 @@
 # App #
 #######
 configs/*.js
-www/js/vendor/
-www/css/vendor/
-www/js/*.min.js
-www/css/*.min.css
+themes/default/js/vendor/
+themes/default/css/vendor/
+themes/default/js/*.min.js
+themes/default/css/*.min.css
 .github
 databases/
 tests/

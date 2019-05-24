@@ -1,12 +1,12 @@
 <head>
 	<meta charset="UTF-8" />
-	<meta http-equiv="default-style" content="{% if 'nightmode' in cookie.style %}nightmode{% else %}default{% endif %}">
+	<meta http-equiv="default-style" content="{% if 'nightmode' == cookie.style %}nightmode{% else %}default{% endif %}">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<title>{{ translate.title }}</title>
-	<meta name="description" content="{{ translate.description }}"/>
+	<title>{{ page.title }} | {{ translate.title }}</title>
+	<meta name="description" content="{{ page.description }}"/>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	{% if 'enabled' in config.site.pingback %}<link rel="pingback" href="{{ config.site.fullurl }}/xmlrpc" />{% endif %}
+	{% if 'enabled' == config.site.pingback %}<link rel="pingback" href="{{ config.site.fullurl }}/xmlrpc" />{% endif %}
 
 	<!-- DNS CACHE -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
@@ -23,10 +23,10 @@
 	{% for lang in config.site.mui.languages %}
 	<link rel="alternate" hreflang="{{ lang.lang }}" href="{{ lang.url }}" />
 	{% endfor %}
-	<link rel="canonical" href="{{ config.site.fullurl }}" />
+	<link rel="canonical" href="{{ config.site.fullurl }}/{{ page.url }}" />
 
 	<!-- PWA -->
-	{% if 'enabled' in config.site.pwa.status %}<link rel="manifest" href="{{ config.site.fullurl }}/manifest.webmanifest">{% endif %}
+	{% if 'enabled' == config.site.pwa.status %}<link rel="manifest" href="{{ config.site.fullurl }}/manifest.webmanifest">{% endif %}
 
     <!-- Google Webmaster -->
     <meta name="google-site-verification" content="{{ config.services.google.webmaster_id }}"/>
@@ -41,9 +41,9 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="{{ config.site.fullurl }}/img/icons/icon-screen.png" />
 	<meta property="og:site_name" content="{{ translate.title }}" />
-	<meta property="og:title" content="{{ translate.title }}" />
+	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:url" content="{{ config.site.fullurl }}" />
-	<meta property="og:description" content="{{ translate.description }}" />
+	<meta property="og:description" content="{{ page.description }}" />
 
 	<!-- Windows  -->
 	<meta name="msapplication-navbutton-color" content="{{ config.site.pwa.color }}">
@@ -53,13 +53,13 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="{{ translate.title }}" />
-    <meta name="twitter:title" content="{{ translate.title }}" />
-    <meta name="twitter:description" content="{{ translate.description }}" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
     <meta name="twitter:creator" content="@{{ config.site.social.twitter }}" />
     <meta name="twitter:image" content="{{ config.site.fullurl }}/img/screenshot/screen-800x300.png" />
 
     <!-- Apple -->
-    <meta name="apple-mobile-web-app-title" content="{{ translate.title }}" />
+    <meta name="apple-mobile-web-app-title" content="{{ page.title }}" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <link rel="apple-touch-icon" type="image/png" href="{{ config.site.fullurl }}/img/icons/apple/icon-512x512.png" />
@@ -77,13 +77,13 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap">
 	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/full.min.css" />
-	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/skin-default.min.css" title="default" {% if 'nightmode' in cookie.style %}disabled{% endif %} />
-	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/skin-nightmode.min.css" title="nightmode" {% if 'default' in cookie.style %}disabled{% endif %} />
+	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/skin-default.min.css" title="default" {% if 'nightmode' == cookie.style %}disabled{% endif %} />
+	<link rel="stylesheet" type="text/css" href="{{ config.site.fullurl }}/css/skin-nightmode.min.css" title="nightmode" {% if 'default' == cookie.style %}disabled{% endif %} />
 
 	<!-- Nightmode  -->
-	<meta name="nightmode" content="{% if 'nightmode' in cookie.style %}enable{% else %}disable{% endif %}" />
+	<meta name="nightmode" content="{% if 'nightmode' == cookie.style %}enable{% else %}disable{% endif %}" />
 
 	<style>
-	{% include "./../../css/skeleton.min.css" %}
+	{% include 'css/skeleton.min.css' %}
 	</style>
 </head>
