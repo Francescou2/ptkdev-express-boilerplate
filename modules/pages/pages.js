@@ -38,6 +38,8 @@ class Pages {
 				cookies = req.cookies;
 			}
 
+			self.core.config.system.language = (req.query.lang ? req.query.lang : self.core.config.system.language);
+
 			res.set("Content-Type", "text/html");
 		    res.render("./pages/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
 		});
@@ -60,6 +62,8 @@ class Pages {
 				cookies = req.cookies;
 			}
 
+			self.core.config.system.language = (req.query.lang ? req.query.lang : self.core.config.system.language);
+
 			res.set("Content-Type", "text/html");
 		    res.render("./pages/offline/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
 		});
@@ -81,6 +85,8 @@ class Pages {
 			} else {
 				cookies = req.cookies;
 			}
+
+			self.core.config.system.language = (req.query.lang ? req.query.lang : self.core.config.system.language);
 
 			res.set("Content-Type", "text/html");
 			res.status(404);

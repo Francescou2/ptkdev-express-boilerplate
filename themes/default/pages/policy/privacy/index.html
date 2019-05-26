@@ -11,13 +11,7 @@
 <body id="yourprojectname" itemscope itemtype="http://schema.org/WebPage">
 	{% include "pages/commons/menu.html" %}
 	<div class="container">
-		{% if config.system.language == 'it' %}
-			{% include "pages/contents/privacy_it.html" %}
-		{% endif %}
-
-		{% if config.system.language == 'en' %}
-			{% include "pages/contents/privacy_en.html" %}
-		{% endif %}
+		{% include "pages/policy/privacy/content.html" %}
 	</div>
 	{% include "pages/commons/footer.html" %}
 	<script defer src="{{ config.site.fullurl }}/js/full.min.js"></script>

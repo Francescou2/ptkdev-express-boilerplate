@@ -11,18 +11,7 @@
 <body id="yourprojectname" itemscope itemtype="http://schema.org/WebPage">
 	{% include "pages/commons/menu.html" %}
 	<div class="container">
-		<section class="section">
-			<div class="content has-text-centered">
-				<header>
-				<picture class="ptkdev">
-                    <source srcset="/img/logo.webp" type="image/webp">
-                    <source srcset="/img/logo.png" type="image/png">
-                    <img width="150" height="150" src="/img/lazy.png" data-src="/img/logo.png"  alt="Patryk Rzucidło (PTKDev)" class="lazy">
-                </picture><br />
-            	</header>
-				{{ translate.hello_world }}
-			</div>
-		</section>
+		{% include "pages/content.html" %}
 	</div>
 	{% include "pages/commons/footer.html" %}
 	<script defer src="{{ config.site.fullurl }}/js/full.min.js"></script>

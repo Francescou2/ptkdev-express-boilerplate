@@ -85,7 +85,6 @@ class Yourprojectname {
 
 		this.pages.index();
 		this.pages.offline();
-		this.pwa.updates();
 		this.seo.sitemap();
 		this.seo.robotstxt();
 		this.pages_policy.privacy();

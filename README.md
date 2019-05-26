@@ -24,7 +24,7 @@
 * [✔️] Themes Switch
 * [✔️] Nightmode
 * [✔️] Multi language
-* [❌] Switch language in app (**coming soon**)
+* [✔️] Switch language in app
 * [✔️] Template engine (nunjucks)
 * [✔️] Advanced logger
 * [✔️] Auto merge js, css (sass) in 1 file.

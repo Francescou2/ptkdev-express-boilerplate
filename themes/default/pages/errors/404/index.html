@@ -11,11 +11,7 @@
 <body id="yourprojectname" itemscope itemtype="http://schema.org/WebPage">
 	{% include "pages/commons/menu.html" %}
 	<div class="container">
-		<section class="section">
-			<div class="content has-text-centered">
-				{{ translate.error_404 }}
-			</div>
-		</section>
+		{% include "pages/errors/404/content.html" %}
 	</div>
 	{% include "pages/commons/footer.html" %}
 	<script defer src="{{ config.site.fullurl }}/js/full.min.js"></script>

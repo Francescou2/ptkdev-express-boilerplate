@@ -49,5 +49,13 @@ module.exports = {
 	"themes_nightmode": "Notturno",
 	"help": "Aiuto",
 	"patreon": "Patreon",
-	"github": "Github"
+	"github": "Github",
+	"languages": "Lingue",
+	"language_italian": "Italiano",
+	"language_english": "English",
+	"electron_copy": "Copia",
+	"electron_cut": "Taglia",
+	"electron_paste": "Incolla",
+	"electron_show": "Apri",
+	"electron_quit": "Chiudi"
 };

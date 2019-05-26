@@ -38,6 +38,8 @@ class Policy {
 				cookies = req.cookies;
 			}
 
+			self.core.config.system.language = (req.query.lang ? req.query.lang : self.core.config.system.language);
+
 			res.set("Content-Type", "text/html");
 		    res.render("./pages/policy/privacy/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
 		});
@@ -59,6 +61,8 @@ class Policy {
 			} else {
 				cookies = req.cookies;
 			}
+
+			self.core.config.system.language = (req.query.lang ? req.query.lang : self.core.config.system.language);
 
 			res.set("Content-Type", "text/html");
 		    res.render("./pages/policy/cookie/index.html", {"config": self.core.config, "translate": self.lang[self.core.config.system.language], "cookie": cookies});
