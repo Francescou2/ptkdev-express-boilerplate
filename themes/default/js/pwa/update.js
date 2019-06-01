@@ -13,6 +13,8 @@ caches.open("{{ config.site.url }}").then(function(cache) {
 		{% for url in config.site.pwa.pages %}
 		cache.delete("{{ config.site.fullurl }}{{ url }}");
 		{% endfor %}
+
+		sw_refresh();
 	}
 
 	fetch("{{ config.site.fullurl }}/pwa-updates").then(function(response) {
@@ -30,6 +32,8 @@ caches.open("{{ config.site.url }}").then(function(cache) {
 			{% for url in config.site.pwa.pages %}
 			cache.delete("{{ config.site.fullurl }}{{ url }}");
 			{% endfor %}
+
+			sw_refresh();
 		}
 	});
 });

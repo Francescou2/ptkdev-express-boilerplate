@@ -23,7 +23,7 @@
 
 	<!-- Translations -->
 	{% for lang in config.site.mui.languages %}
-	<link rel="alternate" hreflang="{{ lang.lang }}" href="{{ lang.url }}" />
+	<link rel="alternate" hreflang="{{ lang.lang }}" href="{{ lang.url }}{{ page.url }}" />
 	{% endfor %}
 	<link rel="canonical" href="{{ config.site.fullurl }}{{ page.url }}" />
 

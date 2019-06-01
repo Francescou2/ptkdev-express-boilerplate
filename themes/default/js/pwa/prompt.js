@@ -1,3 +1,4 @@
+var sw_refresh = null;
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("{{ config.site.fullurl }}/sw.js").then(function(registration) {
 		console.log("{{ translate.sw_reg }}");
@@ -5,6 +6,9 @@ if ("serviceWorker" in navigator) {
 
 	navigator.serviceWorker.ready.then(function(registration) {
 		console.log("{{ translate.sw_ready }}");
+		sw_refresh = function () {
+			registration.unregister();
+		}
 	});
 }
 
