@@ -19,7 +19,9 @@
 			"tagNamePreference": {
 				"returns": "return"
 			}
-		}
+		},
+		"snakecasejs/snakecasejs": "warn",
+		"snakecasejs/whitelist": ["EventEmitter", "requestAnimationFrame", "updateViaCache", "saveUninitialized", "consumerKey", "consumerSecret", "callbackURL", "includeEmail", "reloadDelay"]
 	},
 	"rules": {
 		"no-multi-spaces": ["error", { "ignoreEOLComments": true, "exceptions": { "VariableDeclarator": true } }],
@@ -51,8 +53,6 @@
 	    "jest/no-identical-title": "error",
 	    "jest/prefer-to-have-length": "warn",
 	    "jest/valid-expect": "error",
-		"snakecasejs/snakecasejs": "warn",
-		"snakecasejs/whitelist": ["EventEmitter", "requestAnimationFrame", "updateViaCache", "saveUninitialized", "consumerKey", "consumerSecret", "callbackURL", "includeEmail", "reloadDelay"],
 		"jsdoc/require-param": 1,
 		"jsdoc/require-param-description": 1,
 		"jsdoc/require-param-name": 1,

@@ -13,7 +13,7 @@ const chalk = require("chalk");
 const ansi = require("strip-ansi");
 const TYPES_LOG = require("./types");
 const core = require("./../core/core");
-const clogger = console; // exception
+const logger = console;
 
 class Log {
 	constructor(func) {
@@ -40,7 +40,7 @@ class Log {
 	* Write in debug.log and error.log in /logs folder
 	*
 	* @param {string} type    - example: INFO/WARNING/ERROR/DEBUG or other valid type string (see ./types.js) (mandatory)
-	* @param {string} func    - function name, class or similar when this log appear (mandatory)
+	* @param {string} tag     - function name, class or similar when this log appear (mandatory)
 	* @param {string} message - error, warning or info description (mandatory)
 	*
 	*/
@@ -49,14 +49,14 @@ class Log {
 
 		fse.appendFile(this.core.config.log.path.debug_log, ansi(log_text), function(err) {
 			if (err) {
-				clogger.log(err);
+				logger.log(err);
 			}
 		});
 
 		if (type.id === "ERROR") {
 			fse.appendFile(this.core.config.log.path.error_log, ansi(log_text), function(err) {
 				if (err) {
-					clogger.log(err);
+					logger.log(err);
 				}
 			});
 		}
@@ -69,16 +69,16 @@ class Log {
 	* Log manager - don't use this directly. Use info() error() debug() warning()
 	*
 	* @param {string} type    - example: INFO/WARNING/ERROR/DEBUG or other valid type string (see ./types.js) (mandatory)
-	* @param {string} func    - function name, class or similar when this log appear (mandatory)
+	* @param {string} tag     - function name, class or similar when this log appear (mandatory)
 	* @param {string} message - error, warning or info description (mandatory)
 	*
 	*/
-	log(type, message) {
+	log(type, tag, message) {
 		let time = TYPES_LOG.TIME;
 		if (this.core.config.system.terminal_colors === "enabled") {
-			clogger.log(chalk`${type.bgcolor(type.label)}${time.bgcolor(` ${this.current_time()} `)}${type.bgcolor(" ")} ${type.color(message)}`);
+			logger.log(chalk`${type.bgcolor(type.label)}${time.bgcolor(` ${this.current_time()} `)}${type.bgcolor(" ")} ${type.color(`${tag}: ${message}`)}`);
 		} else {
-			clogger.log(ansi(chalk`${type.bgcolor(type.label)}${time.bgcolor(` ${this.current_time()} `)}${type.bgcolor(" ")} ${type.color(message)}`));
+			logger.log(ansi(chalk`${type.bgcolor(type.label)}${time.bgcolor(` ${this.current_time()} `)}${type.bgcolor(" ")} ${type.color(`${tag}: ${message}`)}`));
 		}
 	}
 
@@ -93,7 +93,7 @@ class Log {
 	*/
 	info(tag, message) {
 		if (this.core.config.log.info === "enabled") {
-			this.log(TYPES_LOG.INFO, `${message}`);
+			this.log(TYPES_LOG.INFO, tag, `${message}`);
 			this.append_file(TYPES_LOG.INFO, tag, message);
 		}
 	}
@@ -109,7 +109,7 @@ class Log {
 	*/
 	warning(tag, message) {
 		if (this.core.config.log.warning === "enabled") {
-			this.log(TYPES_LOG.WARNING, `${message}`);
+			this.log(TYPES_LOG.WARNING, tag, `${message}`);
 			this.append_file(TYPES_LOG.WARNING, tag, message);
 		}
 	}
@@ -125,7 +125,7 @@ class Log {
 	*/
 	error(tag, message) {
 		if (this.core.config.log.errors === "enabled") {
-			this.log(TYPES_LOG.ERROR, `${message}`);
+			this.log(TYPES_LOG.ERROR, tag, `${message}`);
 			this.append_file(TYPES_LOG.ERROR, tag, message);
 		}
 	}
@@ -141,7 +141,7 @@ class Log {
 	*/
 	debug(tag, message) {
 		if (this.core.config.log.debug === "enabled") {
-			this.log(TYPES_LOG.DEBUG, `${message}`);
+			this.log(TYPES_LOG.DEBUG, tag, `${message}`);
 			this.append_file(TYPES_LOG.DEBUG, tag, message);
 		}
 	}
@@ -157,9 +157,9 @@ class Log {
 	*/
 	docs(section, tag) {
 		let args = tag.split("::");
-		let url = `https://docs.yourprojectname.com/igbot/${section}/${args[0]}/README.md#${encodeURI(args[1])}`;
-		this.log(TYPES_LOG.DOCS, `${chalk.rgb(236, 135, 191).underline.italic(url)}`);
-		this.append_file(TYPES_LOG.DOCS, `${tag}: ${chalk.rgb(236, 135, 191).blue.underline.italic(url)}`);
+		let url = `https://docs.gamebook.chat/bot/${section}/${args[0]}/README.md#${encodeURI(args[1])}`;
+		this.log(TYPES_LOG.DOCS, tag, `${chalk.rgb(236, 135, 191).underline.italic(url)}`);
+		this.append_file(TYPES_LOG.DOCS, tag, `${chalk.rgb(236, 135, 191).blue.underline.italic(url)}`);
 	}
 
 	/**
@@ -174,8 +174,8 @@ class Log {
 	*/
 	stackoverflow(tag, api, error_message) {
 		let url = `https://stackoverflow.com/search?q=%5B${api}%5D+${encodeURI(error_message)}`;
-		this.log(TYPES_LOG.STACKOVERFLOW, `${chalk.rgb(243, 156, 18).blue.underline.italic(url)}`);
-		this.append_file(TYPES_LOG.STACKOVERFLOW, `${tag}: ${chalk.rgb(243, 156, 18).blue.underline.italic(url)}`);
+		this.log(TYPES_LOG.STACKOVERFLOW, tag, `${chalk.rgb(243, 156, 18).blue.underline.italic(url)}`);
+		this.append_file(TYPES_LOG.STACKOVERFLOW, tag, `${chalk.rgb(243, 156, 18).blue.underline.italic(url)}`);
 	}
 
 	/**
@@ -188,7 +188,7 @@ class Log {
 	*
 	*/
 	sponsor(tag, message) {
-		this.log(TYPES_LOG.SPONSOR, message);
+		this.log(TYPES_LOG.SPONSOR, tag, message);
 		this.append_file(TYPES_LOG.SPONSOR, tag, message);
 	}
 }

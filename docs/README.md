@@ -7,7 +7,7 @@
 ## 🎁 Support: Donate
 > This project is **free**, **open source** and I try to provide excellent **free support**. Why donate? I work on open source projects several hours a week or in my spare time and try to keep it up to date and working. A lower donation would allow continuous development, ever better quality and the realization of this dream. **THANK YOU!**
 
-[![](https://img.shields.io/badge/donate-paypal-005EA6.svg)](http://paypal.ptkdev.io) [![](https://img.shields.io/badge/donate-patreon-F87668.svg)](http://patreon.ptkdev.io) [![](https://img.shields.io/badge/buy%20me-coffee-4B788C.svg)](http://coffee.ptkdev.io)
+[![](https://img.shields.io/badge/donate-paypal-005EA6.svg)](https://www.paypal.me/ptkdev) [![](https://img.shields.io/badge/donate-patreon-F87668.svg)](https://www.patreon.com/ptkdev) [![](https://img.shields.io/badge/buy%20me-coffee-4B788C.svg)](https://ko-fi.com/ptkdev)
 
 ## 🔖 Screenshot
 [![](https://raw.githubusercontent.com/ptkdev-boilerplate/ptkdev-express-boilerplate/master/themes/default/img/screenshot/express-app.png)](#)
@@ -44,11 +44,11 @@ See scripts on `package.json` for more feature and prod mode.
 1. Run `npm run docs`
 
 ## 👑 Sponsors (max 10 available)
-Support this project by becoming a sponsor. 🙏 Become a sponsor on [patreon](http://patreon.ptkdev.io).
+Support this project by becoming a sponsor. 🙏 Become a sponsor on [patreon](https://www.patreon.com/ptkdev).
 
 
 ## 🦄 Backers
-Thanks to all our backers! 🙏 Become a backer on [patreon](http://patreon.ptkdev.io).
+Thanks to all our backers! 🙏 Become a backer on [patreon](https://www.patreon.com/ptkdev).
 
 
 ## ❤️ Contributing

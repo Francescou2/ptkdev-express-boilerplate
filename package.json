@@ -8,9 +8,9 @@
 	"homepage": "https://yourprojectname.com",
 	"docs": "https://docs.yourprojectname.com",
 	"donate": {
-		"patreon": "http://patreon.ptkdev.io",
-		"paypal": "http://paypal.ptkdev.io",
-		"ko-fi": "http://coffee.ptkdev.io"
+		"patreon": "https://www.patreon.com/ptkdev",
+		"paypal": "https://www.paypal.me/ptkdev",
+		"ko-fi": "https://ko-fi.com/ptkdev"
 	},
 	"repository": {
 		"type": "git",
